@@ -1,0 +1,182 @@
+/*!
+  @author Mohamed Muntasir
+  @link https://github.com/devmotheg
+  */
+
+/* General */
+
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Lato");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #ddd7ce;
+  font-family: Lato, sans-serif;
+  min-width: 400px;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3344;
+  margin-top: 0.4rem;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+
+main {
+  margin: 2rem auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Trigger */
+
+.trigger {
+  background: #2c3344;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: calc(4rem / 16);
+  cursor: pointer;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.container {
+  background: #2c3344;
+  padding: 4rem 2rem 2rem;
+  color: #ddd7ce;
+  text-align: center;
+  border-radius: calc(6rem / 16);
+  line-height: 2rem;
+  width: 80%;
+  max-width: calc(640rem / 16);
+  margin: 0 auto;
+  opacity: 0;
+  position: relative;
+  animation-name: slide-down;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+}
+
+.cross {
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  left: 0.6rem;
+  top: 1.6rem;
+}
+
+.cross span {
+  background: #eee;
+  display: block;
+  width: calc(36rem / 16);
+  height: calc(6rem / 16);
+  border-radius: calc(4rem / 16);
+}
+
+.cross span:first-child {
+  transform: rotate(45deg);
+}
+
+.cross span:last-child {
+  margin-top: 0.5rem;
+  transform: rotate(-45deg);
+  position: relative;
+  top: calc(-14rem / 16);
+}
+
+.open {
+  display: block;
+}
+
+@keyframes slide-down {
+  to {
+    margin-top: 2rem;
+    opacity: 1;
+  }
+}
+
+/* Modal content */
+
+h1 {
+  color: #eee;
+}
+
+.container h2 {
+  margin-top: 2rem;
+  font-size: 1.17rem;
+}
+
+/* Form */
+
+form {
+  padding: 2rem;
+}
+
+input {
+  display: block;
+}
+
+input[type="email"] {
+  color: #ddd7ce;
+  background: transparent !important;
+  caret-color: #ddd7ce;
+  padding: 1rem;
+  font-size: 1rem;
+  border: calc(3rem / 16) solid #ddd7ce;
+  width: 100%;
+}
+
+input[type="email"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 calc(50em / 16) #2c3344 inset;
+  box-shadow: 0 0 0 calc(50em / 16) #2c3344 inset;
+  -webkit-text-fill-color: #ddd7ce;
+}
+
+input[type="email"]::placeholder {
+  color: #ddd7ce;
+  opacity: 0.6;
+}
+
+.subscribe {
+  background: #eee;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: calc(4rem / 16);
+  font-size: 1.4rem;
+  margin: 1rem auto auto;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.display-error {
+  border-color: indianred !important;
+  color: indianred !important;
+}
